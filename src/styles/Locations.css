@@ -1,0 +1,8 @@
+.location-details__title {
+  margin-bottom: 0;
+}
+.location-details__dimension {
+  margin-top: 0;
+  margin-bottom: var(--size-5);
+  font-size: var(--size-5);
+}

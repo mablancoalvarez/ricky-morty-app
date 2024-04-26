@@ -1,0 +1,11 @@
+.back-link {
+  display: flex;
+  align-items: center;
+  margin: 15px 0 0 60px;
+  color: var(--primary-color);
+}
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}

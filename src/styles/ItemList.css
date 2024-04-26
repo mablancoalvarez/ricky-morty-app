@@ -1,0 +1,32 @@
+.item {
+  list-style: none;
+  text-align: left;
+  padding: var(--size-5);
+  background-color: white;
+  border-radius: 15px;
+  margin: var(--size-5);
+  line-height: 1.4;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  min-width: 500px;
+  @media screen and (min-width: 320px) and (max-width: 600px) {
+    width: 250px;
+    min-width: 0;
+  }
+}
+.item__link {
+  text-decoration: none;
+  color: currentcolor;
+}
+.item__type {
+  color: #707070;
+  font-size: var(--size-4);
+}
+.item__name {
+  margin: 0px;
+  font-weight: 600;
+}
+.item__dimension {
+  margin: 0 8px 0 0;
+  font-size: var(--size-4);
+  font-weight: 300;
+}

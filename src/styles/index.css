@@ -1,0 +1,49 @@
+@import 'App.css';
+@import 'Menu.css';
+@import 'Episodes.css';
+@import 'Locations.css';
+@import 'ItemList.css';
+@import 'Carrusel.css';
+@import 'BackLink.css';
+@import 'Form.css';
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  --primary-color: #242424;
+  --secondary-color: #fbdb94;
+  --size-1: 4px;
+  --size-2: 8px;
+  --size-3: 12px;
+  --size-4: 14px;
+  --size-5: 16px;
+  --size-6: 20px;
+  --size-7: 24px;
+  --size-8: 28px;
+  --size-9: 30px;
+}
+
+body {
+  margin: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 580px) {
+  h1 {
+    font-size: 30px;
+  }
+}
