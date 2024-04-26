@@ -45,6 +45,7 @@ Abrela en [http://localhost:5173](http://localhost:5173) para visualizarla en el
 
 - **Arquitectura principal del proyecto**: Esta esturcutra busca facilitar el mantenimiento y la escalabilidad, de esta forma contendremos la mayor parte del código de la aplicación dentro de la carpeta screens. Cada carpeta de características de producto debe contener código específico del dominio para una característica determinada, de esta forma a medida que crezca la aplicación seguiremos teniendo un código mantenible y también de cara a que futuros desarrolladores puedan colaborar.
 
+```
   └── src
   ├── assets
   ├── components
@@ -71,7 +72,6 @@ Abrela en [http://localhost:5173](http://localhost:5173) para visualizarla en el
 
 
 
-  ```
 
 - **Uso de los contextos**: Se crean dos contextos diferentes uno que envuelve los componentes referentes a los episodios, EpisodesContext y otro para las localizaciones, LocationContext. De esta manera cada uno maneja su propio estado global y provee los datos solo a aquellos componentes que lo necesitan. Fragmentando esta lógica y abstrayendola para que sean totalmente independientes.
 
