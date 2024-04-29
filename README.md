@@ -29,7 +29,7 @@ Esta aplicación web utiliza la API de Ricky Morty para proporcionar una experie
 
 ## Instalación 🏁
 
-1. Clona el repositorio: `git clone https://github.com/mablancoalvarez/app-store-test.git`
+1. Clona el repositorio: `git clone https://github.com/mablancoalvarez/ricky-morty-app.git`
    ```sh
    npm install
    ```
