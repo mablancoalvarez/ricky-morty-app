@@ -1,11 +1,12 @@
 import { useLocationsContext } from '../../context/LocationsContext';
 import ListItem from '../../components/UI/ListItem';
+import Title from '../../components/UI/Title';
 const LocationsList = () => {
   const { locationsData } = useLocationsContext();
   if (!locationsData) return <div> Loading...</div>;
   return (
     <>
-      <h1>Locations</h1>
+      <Title title='Locations' />
       <ul className='ly-main'>
         {locationsData.results?.map((location) => {
           const { name, type, dimension, id } = location;

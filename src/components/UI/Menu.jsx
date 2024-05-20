@@ -3,6 +3,13 @@ import { ROUTES } from '../../utils/constants.js';
 import image from '../../assets/logo.svg';
 
 const Menu = () => {
+  const getNavLinkClass = ({ isActive }) => (isActive ? 'menu__link active' : 'menu__link');
+
+  const menuItems = [
+    { route: ROUTES.EPISODES, label: 'Episodes' },
+    { route: ROUTES.LOCATIONS, label: 'Locations' },
+  ];
+
   return (
     <div className='menu'>
       <Link to='/'>
@@ -10,23 +17,17 @@ const Menu = () => {
       </Link>
       <nav className='menu__nav'>
         <ul className='menu__list'>
-          <li className='menu__item'>
-            <NavLink
-              to={ROUTES.EPISODES}
-              className={({ isActive }) => (isActive ? 'menu__link active' : 'menu__link')}>
-              Episodes
-            </NavLink>
-          </li>
-          <li className='menu__item'>
-            <NavLink
-              to={ROUTES.LOCATIONS}
-              className={({ isActive }) => (isActive ? 'menu__link active' : 'menu__link')}>
-              Locations
-            </NavLink>{' '}
-          </li>
+          {menuItems.map((item, index) => (
+            <li key={index} className='menu__item'>
+              <NavLink to={item.route} className={getNavLinkClass}>
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>
   );
 };
+
 export default Menu;
