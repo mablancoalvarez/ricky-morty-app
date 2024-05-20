@@ -1,8 +1,10 @@
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { useLocationsContext } from '../../context/LocationsContext.jsx';
 import Carrusel from '../../components/UI/Carrusel.jsx';
 import BackLink from '../../components/UI/BackLink.jsx';
-import { useEffect, useState } from 'react';
+import Title from '../../components/UI/Title.jsx';
+import Description from '../../components/UI/Description.jsx';
 import { getMultiplesUrlsData } from '../../utils/helpers.js';
 import { ROUTES } from '../../utils/constants.js';
 
@@ -31,8 +33,8 @@ const LocationDetails = () => {
   return (
     <div className='location-details'>
       <BackLink route={ROUTES.LOCATIONS} />
-      <h1 className='location-details__title'>{name}</h1>
-      <p className='location-details__dimension'>{dimension}</p>
+      <Title title={name} className='location-details__title' />
+      <Description description={dimension} className='location-details__dimension' />
       <Carrusel items={residentData} />
     </div>
   );

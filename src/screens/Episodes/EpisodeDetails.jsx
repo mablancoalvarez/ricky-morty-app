@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import { useEpisodesContext } from '../../context/EpisodesContext.jsx';
 import Carrusel from '../../components/UI/Carrusel.jsx';
 import BackLink from '../../components/UI/BackLink.jsx';
+import Title from '../../components/UI/Title.jsx';
+import Description from '../../components/UI/Description.jsx';
 import { getMultiplesUrlsData } from '../../utils/helpers.js';
 import { useEffect, useState } from 'react';
 import Form from './Form.jsx';
@@ -33,10 +35,8 @@ const EpisodeDetails = () => {
   return (
     <div className='episode-details'>
       <BackLink route={ROUTES.EPISODES} />
-      <h1 className='episode-details__title'>
-        {episode} - {name}
-      </h1>
-      <p className='episode-details__date'>{air_date}</p>
+      <Title title={name} className='episode-details__title' />
+      <Description description={air_date} className='episode-details__date' />
       <Carrusel items={charactersData} />
       <Form />
     </div>
