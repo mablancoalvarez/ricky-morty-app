@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const Form = () => {
+  const [status, setStatus] = useState('');
   const {
     handleSubmit,
     register,
@@ -9,6 +11,7 @@ const Form = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setStatus('');
     try {
       const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
@@ -20,10 +23,10 @@ const Form = () => {
       if (!response.ok) {
         throw new Error('Error enviando el formulario');
       }
-      console.log('Se ha enviado correctamente');
       reset();
+      setStatus('Comentario enviado');
     } catch (error) {
-      console.error('Error', error.message);
+      setStatus(error.message);
     }
   };
 
@@ -81,6 +84,7 @@ const Form = () => {
       <button className='comment-form__button' type='submit' aria-label='Enviar comentario'>
         Enviar
       </button>
+      {status && <p>{status}</p>}
     </form>
   );
 };

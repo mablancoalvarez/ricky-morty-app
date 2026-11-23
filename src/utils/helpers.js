@@ -1,15 +1,10 @@
 export const getMultiplesUrlsData = async (urls) => {
-  try {
-    const promises = urls.map(async (url) => {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error('Failed to fetch');
-      }
-      return await response.json();
-    });
-    const responseData = await Promise.all(promises);
-    return responseData;
-  } catch (error) {
-    throw new Error('Error');
+  const responses = await Promise.all(urls.map((url) => fetch(url)));
+  const failed = responses.find((response) => !response.ok);
+
+  if (failed) {
+    throw new Error(`Failed to fetch ${failed.url}`);
   }
+
+  return Promise.all(responses.map((response) => response.json()));
 };
